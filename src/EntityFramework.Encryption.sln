@@ -2,11 +2,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.Encryption.Core", "EntityFramework.Encryption.Core\EntityFramework.Encryption.Core.csproj", "{3BA5C824-E3A7-4273-A49E-6ACB14FE3B14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.Encryption.Extensions", "EntityFramework.Encryption.Extensions\EntityFramework.Encryption.Extensions.csproj", "{2C108260-AA3A-4D18-9E95-30E8B33718BC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E213430D-E118-400D-8EC3-670C221CFFF1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.Encryption.Core.Tests", "EntityFramework.Encryption.Core.Tests\EntityFramework.Encryption.Core.Tests.csproj", "{5AFDCB29-7D49-4469-B15B-5777BC220F34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{814C1D89-BEB5-4E34-AAF8-506BE49638D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework.Encryption.Sample", "EntityFramework.Encryption.Sample\EntityFramework.Encryption.Sample.csproj", "{D64BF5CD-7944-47F3-A964-3D395EFFA271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,16 +20,17 @@ Global
 		{3BA5C824-E3A7-4273-A49E-6ACB14FE3B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BA5C824-E3A7-4273-A49E-6ACB14FE3B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BA5C824-E3A7-4273-A49E-6ACB14FE3B14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C108260-AA3A-4D18-9E95-30E8B33718BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C108260-AA3A-4D18-9E95-30E8B33718BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C108260-AA3A-4D18-9E95-30E8B33718BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C108260-AA3A-4D18-9E95-30E8B33718BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D64BF5CD-7944-47F3-A964-3D395EFFA271}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D64BF5CD-7944-47F3-A964-3D395EFFA271}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D64BF5CD-7944-47F3-A964-3D395EFFA271}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D64BF5CD-7944-47F3-A964-3D395EFFA271}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34} = {E213430D-E118-400D-8EC3-670C221CFFF1}
+		{D64BF5CD-7944-47F3-A964-3D395EFFA271} = {814C1D89-BEB5-4E34-AAF8-506BE49638D6}
 	EndGlobalSection
 EndGlobal
