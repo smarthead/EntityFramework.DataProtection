@@ -13,7 +13,7 @@ namespace EntityFramework.Encryption.Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static EncryptionServicesBuilder AddEfEcryption<TContext>(this IServiceCollection services,
+        public static EncryptionServicesBuilder AddEfEncryption<TContext>(this IServiceCollection services,
             Action<EncryptionServicesOptions> configure = null)
         where TContext : DbContext
         {
