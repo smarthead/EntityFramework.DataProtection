@@ -46,12 +46,30 @@ namespace EntityFramework.Encryption.Sample.Tests.Controller
 
             var userFromDatabase = await usersResponse
                 .Content
-                .ReadAsAsync<User>();
+                .ReadAsAsync<UserDto>();
             
             Assert.NotNull(userFromDatabase);
             Assert.Equal(user.Email, userFromDatabase.PersonalData.Email);
             Assert.Equal(user.SensitiveData, userFromDatabase.PersonalData.SensitiveData);
             Assert.Equal(user.PhoneNumber, userFromDatabase.PersonalData.PhoneNumber);
         }
+    }
+
+    public class UserDto
+    {
+        public long Id { get; set; }
+
+        public PersonalDataDto PersonalData { get; set; }
+    }
+
+    public class PersonalDataDto
+    {
+        public string PhoneNumber { get; set; }
+
+        public string Email { get; set; }
+        
+        public string SensitiveData { get; set; }
+        
+        public string PhoneNumberHash { get; protected set; }
     }
 }
