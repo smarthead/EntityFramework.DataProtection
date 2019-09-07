@@ -4,7 +4,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <AssemblyName>EntityFramework.DataProtection.Core</AssemblyName>
         <PackageId>EntityFramework.DataProtection.Core</PackageId>
-        <Version>0.1.0</Version>
+        <Version>0.1.1</Version>
         <PackageProjectUrl>https://github.com/qdimka/EntityFramework.DataProtection</PackageProjectUrl>
         <IsTestProject>false</IsTestProject>
     </PropertyGroup>
