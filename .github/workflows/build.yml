@@ -1,0 +1,19 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Environment.
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.2.401'
+    - name: Build and run tests.
+      run: |
+        cd src/
+        dotnet test
