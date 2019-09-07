@@ -2,6 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>EntityFramework.Encryption.Core</AssemblyName>
+        <PackageId>EntityFramework.Encryption.Core</PackageId>
+        <Version>0.1.0</Version>
+        <PackageProjectUrl>https://github.com/qdimka/EntityFramework.Encryption</PackageProjectUrl>
+        <IsTestProject>false</IsTestProject>
     </PropertyGroup>
 
     <ItemGroup>
