@@ -1,10 +1,13 @@
 using System;
+using EntityFramework.Encryption.Core.Abstractions;
 
 namespace EntityFramework.Encryption.Core.Services.Aes256
 {
-    [AttributeUsage(AttributeTargets.Property)]
-    public class Aes256Attribute : Attribute
+    public class Aes256Attribute : DataProtectionAttribute
     {
-        
+        public Aes256Attribute() 
+            : base(typeof(Aes256DataEncryptor))
+        {
+        }
     }
 }

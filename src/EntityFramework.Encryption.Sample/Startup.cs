@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EntityFramework.Encryption.Core.Customizers;
+using EntityFramework.Encryption.Core.Extensions;
 using EntityFramework.Encryption.Sample.Dal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +11,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -34,8 +37,20 @@ namespace EntityFramework.Encryption.Sample
             _connection.Open();
 
             services
+                .AddEntityFrameworkSqlite()
                 .AddDbContext<SampleDbContext>(
-                    opt => opt.UseSqlite(_connection));
+                    (p, opt) =>
+                    {
+                        opt.UseSqlite(_connection)
+                            .UseInternalServiceProvider(p);
+                    })
+                .AddEfEncryption()
+                .UseAes256(opt =>
+                {
+                    opt.Password = "Really_Strong_Password_For_Data";
+                    opt.Salt = "Salt";
+                })
+                .UseSha512(opt => { opt.Password = "Really_Strong_Password_For_Data"; });
             
             services
                 .AddMvc()

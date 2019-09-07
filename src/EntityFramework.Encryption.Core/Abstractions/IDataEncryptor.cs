@@ -1,6 +1,6 @@
 namespace EntityFramework.Encryption.Core.Abstractions
 {
-    public interface IDataEncryptor
+    public interface IDataEncryptor : IDataProtector
     {
         string Encrypt(string plainText);
 

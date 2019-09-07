@@ -13,7 +13,7 @@ namespace EntityFramework.Encryption.Core.Services
         
         public ValueConverterResolver(IOptions<EncryptionServicesOptions> options)
         {
-            _services = options
+            var encryptionValueConverters = options
                 .Value
                 .Encryptors
                 .ToDictionary(
@@ -22,11 +22,28 @@ namespace EntityFramework.Encryption.Core.Services
                         s => x.Value.Encrypt(s),
                         s => x.Value.Decrypt(s))
                 );
+            
+            var hashValueConverter = options
+                .Value
+                .Hashers
+                .ToDictionary(
+                    x => x.Key,
+                    x => new ValueConverter<string, string>(
+                        s => x.Value.Hash(s),
+                        s => null)
+                );
+
+            _services = encryptionValueConverters
+                .Concat(hashValueConverter)
+                .ToDictionary(x => x.Key, x => x.Value);
         }
         
         public ValueConverter<string, string> Resolve(Type type)
         {
-            return null;
+            var result = _services.TryGetValue(type, out var service);
+            if (!result)
+                throw new InvalidOperationException("Service not found");
+            return service;
         }
     }
 }

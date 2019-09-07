@@ -13,20 +13,19 @@ namespace EntityFramework.Encryption.Core.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static EncryptionServicesBuilder AddEfEncryption<TContext>(this IServiceCollection services,
+        public static EncryptionServicesBuilder AddEfEncryption(this IServiceCollection services,
             Action<EncryptionServicesOptions> configure = null)
-        where TContext : DbContext
         {
-            services.AddDbContext<TContext>(
-                opt => opt.ReplaceService<IModelCustomizer, EncryptedModelCustomizer>());
-
             services.AddSingleton<ValueConverterResolver>();
+            services.AddSingleton<IModelCustomizer, EncryptedModelCustomizer>();
             
             var builder = new EncryptionServicesBuilder(services);
 
             if(configure != null)
                 services.Configure(configure);
-
+            
+            services.ConfigureOptions<EncryptionsServicesOptionsPostConfigure>();
+            
             return builder;
         }
     }
