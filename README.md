@@ -13,6 +13,7 @@
 This library is still under construction and needs to be peer reviewed as well as have features added.
 
 # Usage
+
 Add reference to EntityFramework.DataProtection.Core to your project.
 
 ```
@@ -58,7 +59,9 @@ Mark properties in your entity with attributes `Aes256` or `Sha512`
   }
 ```
 
-Enjoy!
+Enjoy! 
+You can find the full example [here](https://github.com/qdimka/EntityFramework.DataProtection/tree/master/src/EF.DataProtection.Sample)
+
 
 # Limitations
 + Only string supported
