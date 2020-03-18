@@ -32,20 +32,19 @@ namespace EF.DataProtection.Sample.Tests.Controller
                     new StringContent(JsonConvert.SerializeObject(user), Encoding.UTF8, "application/json"));
 
             response.EnsureSuccessStatusCode();
-            
-            var userId = await response
-                .Content
-                .ReadAsAsync<long>();
+
+            var userId = await response.Content
+                .ReadAsStringAsync();
 
             var usersResponse = await _httpClient
                 .GetAsync($"api/users/{userId}");
             
             usersResponse.EnsureSuccessStatusCode();
 
-            var userFromDatabase = await usersResponse
-                .Content
-                .ReadAsAsync<UserDto>();
-            
+            var stream = await usersResponse.Content.ReadAsStringAsync();
+
+            var userFromDatabase = JsonConvert.DeserializeObject<UserDto>(stream);
+
             Assert.NotNull(userFromDatabase);
             Assert.Equal(user.Email, userFromDatabase.PersonalData.Email);
             Assert.Equal(user.SensitiveData, userFromDatabase.PersonalData.SensitiveData);
