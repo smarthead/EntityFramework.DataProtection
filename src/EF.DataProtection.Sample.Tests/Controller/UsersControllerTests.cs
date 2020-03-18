@@ -33,8 +33,6 @@ namespace EF.DataProtection.Sample.Tests.Controller
 
             response.EnsureSuccessStatusCode();
 
-
-
             var userId = await response.Content
                 .ReadAsStringAsync();
 
