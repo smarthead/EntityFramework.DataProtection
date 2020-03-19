@@ -17,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\EF.DataProtection.Abstractions\EF.DataProtection.Abstractions.csproj" />
       <ProjectReference Include="..\EF.DataProtection.Core\EF.DataProtection.Core.csproj" />
+      <ProjectReference Include="..\EF.DataProtection.Services\EF.DataProtection.Services.csproj" />
     </ItemGroup>
 
 </Project>
