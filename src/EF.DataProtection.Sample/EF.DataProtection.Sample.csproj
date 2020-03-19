@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\EF.DataProtection.Core\EF.DataProtection.Core.csproj" />
+      <ProjectReference Include="..\EF.DataProtection.Extensions\EF.DataProtection.Extensions.csproj" />
     </ItemGroup>
 
 </Project>

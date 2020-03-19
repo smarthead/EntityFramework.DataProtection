@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EF.DataProtection.Core.Services
+namespace EF.DataProtection.Extensions.Extensions
 {
     public class EncryptionServicesBuilder
     {

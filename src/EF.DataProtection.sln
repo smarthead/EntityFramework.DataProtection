@@ -6,13 +6,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E213430D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Core.Tests", "EF.DataProtection.Core.Tests\EF.DataProtection.Core.Tests.csproj", "{5AFDCB29-7D49-4469-B15B-5777BC220F34}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmark", "Benchmark", "{2EDCC5FF-4F1C-44EE-896A-56C4D74BCB86}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{D3474F8F-AA94-4D17-BA9B-674C26183B50}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Sample", "EF.DataProtection.Sample\EF.DataProtection.Sample.csproj", "{7669E472-8765-4237-96CF-04AD7AB069BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Sample.Tests", "EF.DataProtection.Sample.Tests\EF.DataProtection.Sample.Tests.csproj", "{04905EFA-7FB6-44FA-A55F-4F8E49DBFE97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Abstractions", "EF.DataProtection.Abstractions\EF.DataProtection.Abstractions.csproj", "{141AC098-FD9E-4EF0-8436-C97C73044C6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Services", "EF.DataProtection.Services\EF.DataProtection.Services.csproj", "{8BA100EF-8608-456E-9062-CFBE23786EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF.DataProtection.Extensions", "EF.DataProtection.Extensions\EF.DataProtection.Extensions.csproj", "{E5F30E11-ADCD-4881-92E9-9E5E5714276E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +40,18 @@ Global
 		{04905EFA-7FB6-44FA-A55F-4F8E49DBFE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04905EFA-7FB6-44FA-A55F-4F8E49DBFE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04905EFA-7FB6-44FA-A55F-4F8E49DBFE97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141AC098-FD9E-4EF0-8436-C97C73044C6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141AC098-FD9E-4EF0-8436-C97C73044C6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141AC098-FD9E-4EF0-8436-C97C73044C6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141AC098-FD9E-4EF0-8436-C97C73044C6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BA100EF-8608-456E-9062-CFBE23786EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA100EF-8608-456E-9062-CFBE23786EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA100EF-8608-456E-9062-CFBE23786EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA100EF-8608-456E-9062-CFBE23786EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F30E11-ADCD-4881-92E9-9E5E5714276E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F30E11-ADCD-4881-92E9-9E5E5714276E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F30E11-ADCD-4881-92E9-9E5E5714276E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F30E11-ADCD-4881-92E9-9E5E5714276E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5AFDCB29-7D49-4469-B15B-5777BC220F34} = {E213430D-E118-400D-8EC3-670C221CFFF1}

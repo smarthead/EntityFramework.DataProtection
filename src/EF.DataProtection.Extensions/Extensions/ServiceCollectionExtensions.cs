@@ -1,14 +1,13 @@
 using System;
-using System.Collections.Generic;
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Abstractions;
 using EF.DataProtection.Core.Customizers;
 using EF.DataProtection.Core.Services;
-using EF.DataProtection.Core.Services.Aes256;
-using EF.DataProtection.Core.Services.Sha512;
+using EF.DataProtection.Services.Aes256;
+using EF.DataProtection.Services.Sha512;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EF.DataProtection.Core.Extensions
+namespace EF.DataProtection.Extensions.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -52,12 +51,5 @@ namespace EF.DataProtection.Core.Extensions
 
             return builder;
         }
-    }
-
-    public class EncryptionServicesOptions
-    {
-        public Dictionary<Type, IDataEncryptor> Encryptors { get; set; }
-        
-        public Dictionary<Type, IDataHasher> Hashers { get; set; }
     }
 }

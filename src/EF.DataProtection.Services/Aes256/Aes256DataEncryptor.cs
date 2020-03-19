@@ -2,10 +2,10 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Abstractions;
 using Microsoft.Extensions.Options;
 
-namespace EF.DataProtection.Core.Services.Aes256
+namespace EF.DataProtection.Services.Aes256
 {
     public class Aes256DataEncryptor : IDataEncryptor
     {

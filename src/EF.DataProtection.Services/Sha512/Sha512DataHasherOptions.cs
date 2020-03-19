@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace EF.DataProtection.Core.Services.Sha512
+namespace EF.DataProtection.Services.Sha512
 {
     public class Sha512DataHasherOptions
     {
