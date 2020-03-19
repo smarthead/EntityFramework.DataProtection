@@ -1,5 +1,5 @@
-﻿using EF.DataProtection.Core.Services.Aes256;
-using EF.DataProtection.Core.Services.Sha512;
+﻿using EF.DataProtection.Services.Aes256;
+using EF.DataProtection.Services.Sha512;
 
 namespace EF.DataProtection.Sample.Entities
 {

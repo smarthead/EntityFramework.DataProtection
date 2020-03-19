@@ -1,5 +1,5 @@
-using EF.DataProtection.Core.Abstractions;
-using EF.DataProtection.Core.Services.Aes256;
+using EF.DataProtection.Abstractions.Abstractions;
+using EF.DataProtection.Services.Aes256;
 using Xunit;
 
 namespace EF.DataProtection.Core.Tests.Services

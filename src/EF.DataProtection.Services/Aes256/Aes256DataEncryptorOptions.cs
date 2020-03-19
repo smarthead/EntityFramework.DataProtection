@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace EF.DataProtection.Core.Services.Aes256
+namespace EF.DataProtection.Services.Aes256
 {
     public class Aes256DataEncryptorOptions
     {

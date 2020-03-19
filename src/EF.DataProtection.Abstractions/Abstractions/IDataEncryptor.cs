@@ -1,4 +1,4 @@
-namespace EF.DataProtection.Core.Abstractions
+namespace EF.DataProtection.Abstractions.Abstractions
 {
     public interface IDataEncryptor : IDataProtector
     {

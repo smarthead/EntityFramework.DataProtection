@@ -1,6 +1,6 @@
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Attributes;
 
-namespace EF.DataProtection.Core.Services.Aes256
+namespace EF.DataProtection.Services.Aes256
 {
     public class Aes256Attribute : DataProtectionAttribute
     {

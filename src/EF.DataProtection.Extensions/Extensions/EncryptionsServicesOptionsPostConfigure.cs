@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Abstractions;
+using EF.DataProtection.Core.Services;
 using Microsoft.Extensions.Options;
 
-namespace EF.DataProtection.Core.Extensions
+namespace EF.DataProtection.Extensions.Extensions
 {
     public class EncryptionsServicesOptionsPostConfigure : IPostConfigureOptions<EncryptionServicesOptions>
     {

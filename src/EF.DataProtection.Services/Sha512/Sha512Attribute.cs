@@ -1,6 +1,6 @@
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Attributes;
 
-namespace EF.DataProtection.Core.Services.Sha512
+namespace EF.DataProtection.Services.Sha512
 {
     public class Sha512Attribute : DataProtectionAttribute
     {

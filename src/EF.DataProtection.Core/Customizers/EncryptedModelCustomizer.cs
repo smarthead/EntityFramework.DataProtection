@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Reflection;
-using EF.DataProtection.Core.Abstractions;
+using EF.DataProtection.Abstractions.Abstractions;
+using EF.DataProtection.Abstractions.Attributes;
 using EF.DataProtection.Core.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AssemblyName>EF.DataProtection.Abstractions</AssemblyName>
+        <PackageId>EF.DataProtection.Abstractions</PackageId>
+        <Version>1.1.0</Version>
+        <PackageProjectUrl>https://github.com/qdimka/EntityFramework.DataProtection</PackageProjectUrl>
+        <IsTestProject>false</IsTestProject>
+    </PropertyGroup>
+
+</Project>

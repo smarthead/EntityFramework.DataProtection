@@ -1,4 +1,4 @@
-﻿using EF.DataProtection.Core.Extensions;
+﻿using EF.DataProtection.Extensions.Extensions;
 using EF.DataProtection.Sample.Dal;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
