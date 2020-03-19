@@ -17,7 +17,7 @@ This library is still under construction and needs to be peer reviewed as well a
 Add reference to EntityFramework.DataProtection.Core to your project.
 
 ```
-dotnet add package EF.DataProtection.Core
+dotnet add package EF.DataProtection.Extensions
 ```
 
 Include the following code to Startup.cs
