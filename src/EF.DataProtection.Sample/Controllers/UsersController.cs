@@ -22,6 +22,12 @@ namespace EF.DataProtection.Sample.Controllers
                     .Users
                     .FirstOrDefault(x => x.Id == userId));
         
+        [HttpGet("{userId}/protected")]
+        public IActionResult GetProtectedData(long userId)
+            => Ok(_dbContext
+                .UserQuery
+                .FirstOrDefault(x => x.Id == userId));
+        
         [HttpGet]
         public IActionResult GetAll() 
             => Ok(_dbContext.Users.ToList());
@@ -29,14 +35,7 @@ namespace EF.DataProtection.Sample.Controllers
         [HttpPost]
         public IActionResult Post(UserCreateModel createModel)
         {
-            var data = new PersonalData
-            {
-                Email = createModel.Email,
-                PhoneNumber = createModel.PhoneNumber,
-                SensitiveData = createModel.SensitiveData
-            };
-            
-            var user = new User(data);
+            var user = new User(createModel.PhoneNumber, createModel.Email, createModel.SensitiveData);
 
             _dbContext.Add(user);
             _dbContext.SaveChanges();

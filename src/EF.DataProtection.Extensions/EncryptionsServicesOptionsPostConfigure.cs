@@ -4,7 +4,7 @@ using EF.DataProtection.Abstractions.Abstractions;
 using EF.DataProtection.Core.Services;
 using Microsoft.Extensions.Options;
 
-namespace EF.DataProtection.Extensions.Extensions
+namespace EF.DataProtection.Extensions
 {
     public class EncryptionsServicesOptionsPostConfigure : IPostConfigureOptions<EncryptionServicesOptions>
     {
