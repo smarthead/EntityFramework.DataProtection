@@ -7,17 +7,17 @@
 + Flexible
 + Declarative
 + Linq support (with limitations)
-+ Supports netstandard 2.0
++ Supports netstandard 2.1
 
 # Status
 This library is still under construction and needs to be peer reviewed as well as have features added.
 
 # Usage
 
-Add reference to EntityFramework.DataProtection.Core to your project.
+Add reference to EF.DataProtection.Services to your project.
 
 ```
-dotnet add package EF.DataProtection.Extensions
+dotnet add package EF.DataProtection.Services
 ```
 
 Include the following code to Startup.cs
@@ -32,14 +32,19 @@ Include the following code to Startup.cs
                   .UseInternalServiceProvider(p);
           })
       .AddEfEncryption()
-      .UseAes256(opt =>
+      .AddAes256(opt =>
       {
           opt.Password = "Really_Strong_Password_For_Data";
           opt.Salt = "Salt";
       })
-      .UseSha512(opt => { opt.Password = "Really_Strong_Password_For_Data"; });
+      .AddSha512(opt => { opt.Password = "Really_Strong_Password_For_Data"; });
 ```
 
+Add reference to EF.DataProtection.Abstractions to your domain model project.
+
+```
+dotnet add package EF.DataProtection.Abstractions
+```
 Mark properties in your entity with attributes `Aes256` or `Sha512`
 
 ```csharp
