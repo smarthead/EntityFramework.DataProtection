@@ -12,8 +12,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\EF.DataProtection.Core\EF.DataProtection.Core.csproj" />
-      <ProjectReference Include="..\EF.DataProtection.Extensions\EF.DataProtection.Extensions.csproj" />
       <ProjectReference Include="..\EF.DataProtection.Services\EF.DataProtection.Services.csproj" />
     </ItemGroup>
 

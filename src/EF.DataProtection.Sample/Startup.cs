@@ -1,5 +1,6 @@
-﻿using EF.DataProtection.Extensions.Extensions;
+﻿using EF.DataProtection.Extensions;
 using EF.DataProtection.Sample.Dal;
+using EF.DataProtection.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -37,12 +38,12 @@ namespace EF.DataProtection.Sample
                             .UseInternalServiceProvider(p);
                     })
                 .AddEfEncryption()
-                .UseAes256(opt =>
+                .AddAes256(opt =>
                 {
                     opt.Password = "Really_Strong_Password_For_Data";
                     opt.Salt = "Salt";
                 })
-                .UseSha512(opt => { opt.Password = "Really_Strong_Password_For_Data"; });
+                .AddSha512(opt => { opt.Password = "Really_Strong_Password_For_Data"; });
             
             services
                 .AddControllers()
@@ -53,6 +54,7 @@ namespace EF.DataProtection.Sample
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, SampleDbContext dbContext)
         {
             dbContext.Database.EnsureCreated();
+            dbContext.Database.Migrate();
             
             if (env.IsDevelopment())
             {

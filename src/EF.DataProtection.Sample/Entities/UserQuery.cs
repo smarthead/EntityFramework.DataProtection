@@ -1,20 +1,15 @@
-﻿using EF.DataProtection.Services.Aes256;
-using EF.DataProtection.Services.Sha512;
-
 namespace EF.DataProtection.Sample.Entities
 {
-    public class PersonalData
+    public class UserQuery
     {
-        [Aes256]
+        public long Id { get; set; }
+        
         public string PhoneNumber { get; set; }
-
-        [Aes256]
+        
         public string Email { get; set; }
-
-        [Aes256]
+        
         public string SensitiveData { get; set; }
-
-        [Sha512]
+        
         public string PhoneNumberHash { get; protected set; }
     }
 }

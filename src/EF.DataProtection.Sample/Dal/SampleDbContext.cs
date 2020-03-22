@@ -7,6 +7,8 @@ namespace EF.DataProtection.Sample.Dal
     {
         public DbSet<User> Users { get; set; }
         
+        public DbSet<UserQuery> UserQuery { get; set; }
+        
         public SampleDbContext(DbContextOptions<SampleDbContext> options)
             :base(options)
         {
@@ -16,8 +18,10 @@ namespace EF.DataProtection.Sample.Dal
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<User>()
-                .OwnsOne<PersonalData>(x => x.PersonalData);
+            modelBuilder.Entity<UserQuery>()
+                .ToQuery(() => UserQuery.FromSqlRaw(@"
+                        select Id, PhoneNumber, Email, SensitiveData, PhoneNumberHash from Users"))
+                .HasNoKey();
         }
     }
 }

@@ -1,13 +1,12 @@
 using System;
+using System.Linq;
 using EF.DataProtection.Abstractions.Abstractions;
 using EF.DataProtection.Core.Customizers;
 using EF.DataProtection.Core.Services;
-using EF.DataProtection.Services.Aes256;
-using EF.DataProtection.Services.Sha512;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EF.DataProtection.Extensions.Extensions
+namespace EF.DataProtection.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -30,22 +29,28 @@ namespace EF.DataProtection.Extensions.Extensions
     
     public static class EncryptionServicesBuilderExtensions
     {
-        public static EncryptionServicesBuilder UseAes256(this EncryptionServicesBuilder builder,
-            Action<Aes256DataEncryptorOptions> configure = null)
-        {
-            builder.ServiceCollection.AddSingleton<IDataEncryptor, Aes256DataEncryptor>();
-            
-            if (configure != null)
-                builder.ServiceCollection.Configure(configure);
+        public static EncryptionServicesBuilder AddDataEncryptor<TImplementation, TOptions>(
+            this EncryptionServicesBuilder builder, Action<TOptions> configure = null)
+            where TImplementation : IDataEncryptor
+            where TOptions : class =>
+            builder.AddDataProtector(typeof(IDataEncryptor), typeof(TImplementation), configure);
 
-            return builder;
-        }
-        
-        public static EncryptionServicesBuilder UseSha512(this EncryptionServicesBuilder builder,
-            Action<Sha512DataHasherOptions> configure = null)
+        public static EncryptionServicesBuilder AddDataHasher<TImplementation, TOptions>(
+            this EncryptionServicesBuilder builder, Action<TOptions> configure = null)
+            where TImplementation : IDataHasher
+            where TOptions : class =>
+            builder.AddDataProtector(typeof(IDataHasher), typeof(TImplementation), configure);
+
+        public static EncryptionServicesBuilder AddDataProtector<TOptions>(
+            this EncryptionServicesBuilder builder, Type dataProtector, 
+            Type implementation, Action<TOptions> configure = null)
+            where TOptions : class
         {
-            builder.ServiceCollection.AddSingleton<IDataHasher, Sha512DataHasher>();
             
+            builder
+                    .ServiceCollection
+                    .AddSingleton(dataProtector, implementation);
+
             if (configure != null)
                 builder.ServiceCollection.Configure(configure);
 

@@ -4,7 +4,7 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <AssemblyName>EF.DataProtection.Extensions</AssemblyName>
         <PackageId>EF.DataProtection.Extensions</PackageId>
-        <Version>1.1.1</Version>
+        <Version>1.2.0</Version>
         <PackageProjectUrl>https://github.com/qdimka/EntityFramework.DataProtection</PackageProjectUrl>
         <IsTestProject>false</IsTestProject>
     </PropertyGroup>
@@ -17,7 +17,6 @@
     <ItemGroup>
       <ProjectReference Include="..\EF.DataProtection.Abstractions\EF.DataProtection.Abstractions.csproj" />
       <ProjectReference Include="..\EF.DataProtection.Core\EF.DataProtection.Core.csproj" />
-      <ProjectReference Include="..\EF.DataProtection.Services\EF.DataProtection.Services.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
 ﻿using System;
+using EF.DataProtection.Services.Aes256;
+using EF.DataProtection.Services.Sha512;
 
 namespace EF.DataProtection.Sample.Entities
 {
@@ -8,13 +10,24 @@ namespace EF.DataProtection.Sample.Entities
 
         protected User() { }
         
-        public User(PersonalData data)
+        public User(string phoneNumber, string email, string sensitiveData)
         {
-            // ReSharper disable once VirtualMemberCallInConstructor
-            PersonalData = data
-                ?? throw new ArgumentNullException(nameof(data));
+            PhoneNumber = phoneNumber;
+            PhoneNumberHash = phoneNumber;
+            Email = email;
+            SensitiveData = sensitiveData;
         }
         
-        public virtual PersonalData PersonalData { get; protected set; }
+        [Aes256]
+        public string PhoneNumber { get; set; }
+
+        [Aes256]
+        public string Email { get; set; }
+
+        [Aes256]
+        public string SensitiveData { get; set; }
+
+        [Sha512]
+        public string PhoneNumberHash { get; protected set; }
     }
 }
