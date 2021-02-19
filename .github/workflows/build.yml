@@ -26,5 +26,6 @@ jobs:
         cd src/
         dotnet build
         dotnet test
+        cd ..
         dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
     
