@@ -16,7 +16,7 @@ jobs:
     - name: Install sonar-scanner
       shell: bash
       run: |
-        dotnet tool install --global dotnet-sonarscanner --version x.x.
+        dotnet tool install --global dotnet-sonarscanner
     - name: Build and run tests.
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
