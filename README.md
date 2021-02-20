@@ -4,6 +4,7 @@
 ![Nuget](https://img.shields.io/nuget/dt/EF.DataProtection.Core)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=smarthead_EntityFramework.DataProtection&metric=alert_status)](https://sonarcloud.io/dashboard?id=smarthead_EntityFramework.DataProtection)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=smarthead_EntityFramework.DataProtection&metric=coverage)](https://sonarcloud.io/dashboard?id=smarthead_EntityFramework.DataProtection)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=smarthead_EntityFramework.DataProtection&metric=ncloc)](https://sonarcloud.io/dashboard?id=smarthead_EntityFramework.DataProtection)
 
 # EF.DataEncryption
 + Flexible
