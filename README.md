@@ -13,7 +13,7 @@
 + Supports netstandard 2.1
 
 # Status
-This library is still under construction and needs to be peer reviewed as well as have features added.
+This library is still under construction and needs to be peer reviewed as well as have features added. Feel free to contribute project.
 
 # Usage
 
